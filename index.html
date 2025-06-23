@@ -110,9 +110,10 @@
                     <div class="relative">
                         <div class="w-64 h-64 md:w-80 md:h-80 bg-blue-500 rounded-full opacity-10 absolute -top-6 -left-6"></div>
                         <div class="w-64 h-64 md:w-80 md:h-80 bg-indigo-500 rounded-full opacity-10 absolute -bottom-6 -right-6"></div>
-                        <img src="src/img/chochodile.jpg" 
+                        <img src="src/img/photo.jpg" 
                              alt="Photo de profil" 
-                             class="relative w-64 h-64 md:w-80 md:h-80 object-cover rounded-full border-4 border-white shadow-xl">
+                             class="relative w-64 h-64 md:w-80 md:h-80 object-cover rounded-full border-4 border-white shadow-xl"
+                             id="pp">
                     </div>
                 </div>
             </div>
@@ -454,6 +455,20 @@ découvrir les différents aspects. Désormais, je compte me spécialiser vers l
                         mobileMenu.classList.add('hidden');
                     }
                 });
+            });
+
+            const pp = document.getElementById('pp');
+            const pictureA = './src/img/photo.jpg';
+            const pictureB = 'src/img/chochodile.jpg';
+
+            pp.addEventListener('click', () => {
+                const currentSrc = pp.getAttribute('src');
+                
+                if (currentSrc === pictureA){
+                    pp.setAttribute("src", pictureB)
+                } else {
+                    pp.setAttribute("src", pictureA)
+                }
             });
         });
     </script>
